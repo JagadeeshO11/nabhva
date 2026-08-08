@@ -1,0 +1,221 @@
+/* ==========================================================================
+   NABHVA DESIGN SYSTEM & GLOBAL STYLES
+   ========================================================================== */
+
+:root {
+  --color-dark-green: #143b29;
+  --color-dark-green-hover: #0f2c1f;
+  --color-forest: #0d2b1d;
+  --color-yellow: #ffc400;
+  --color-yellow-hover: #ebb500;
+  --color-yellow-light: #fff8e1;
+  --color-yellow-badge: #ffbe00;
+  
+  --color-text-primary: #121820;
+  --color-text-secondary: #5e6670;
+  --color-text-light: #8e96a2;
+  
+  --color-bg-light: #fbfbfb;
+  --color-card-bg: #ffffff;
+  --color-card-beige: #f5f2eb;
+  --color-card-gray: #eceee9;
+
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.1);
+  --shadow-pill: 0 4px 14px rgba(20, 59, 41, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-light);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text-primary);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s ease;
+}
+
+button {
+  font-family: var(--font-heading);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Containers */
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+}
+
+/* Yellow Badge Pill */
+.badge-yellow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-yellow);
+  color: var(--color-dark-green);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+}
+
+/* Buttons */
+.btn-primary-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background-color: var(--color-dark-green);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-pill);
+}
+
+.btn-primary-dark:hover {
+  background-color: var(--color-dark-green-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(20, 59, 41, 0.25);
+}
+
+.btn-secondary-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background-color: #ffffff;
+  color: var(--color-text-primary);
+  border: 1.5px solid #e2e8f0;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-pill);
+}
+
+.btn-secondary-outline:hover {
+  border-color: var(--color-text-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-yellow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background-color: var(--color-yellow);
+  color: var(--color-dark-green);
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 0.9rem 1.75rem;
+  border-radius: var(--radius-pill);
+  transition: all 0.25s ease;
+}
+
+.btn-yellow:hover {
+  background-color: var(--color-yellow-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 196, 0, 0.4);
+}
+
+/* Decorative Background Curve */
+.hero-yellow-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100%;
+  background-color: var(--color-yellow);
+  border-bottom-left-radius: 200px;
+  z-index: 0;
+}
+
+@media (max-width: 992px) {
+  .hero-yellow-bg {
+    width: 100vw;
+    height: 45%;
+    border-bottom-left-radius: 80px;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(255, 196, 0, 0.4); }
+  70% { box-shadow: 0 0 0 12px rgba(255, 196, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 196, 0, 0); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-green);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0b2217;
+}
