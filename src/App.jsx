@@ -43,7 +43,6 @@ export default function App() {
             <StatsBar />
             <FeaturedProjects onSelectProject={(project) => setSelectedProject(project)} />
             <OurApproach />
-            <ContactFooter onOpenContact={handleOpenContact} />
           </>
         )}
 
@@ -63,6 +62,12 @@ export default function App() {
           <SupportPage />
         )}
       </main>
+
+      {/* Footer for all pages */}
+      <ContactFooter 
+        onOpenContact={handleOpenContact} 
+        onOpenAppDownload={handleOpenAppDownload}
+      />
 
       {/* App Download Redirect Modal */}
       <AppDownloadModal 

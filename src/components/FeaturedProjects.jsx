@@ -237,6 +237,7 @@ export default function FeaturedProjects({ onSelectProject }) {
           flex-direction: column;
           align-items: flex-start;
           gap: 0.35rem;
+          width: 100%;
         }
 
         .svc-tag {
@@ -269,6 +270,7 @@ export default function FeaturedProjects({ onSelectProject }) {
           flex-wrap: wrap;
           gap: 0.4rem;
           margin-bottom: 0.6rem;
+          width: 100%;
         }
 
         .perk-chip {
@@ -288,18 +290,25 @@ export default function FeaturedProjects({ onSelectProject }) {
           display: inline-flex;
           align-items: center;
           gap: 0.35rem;
-          background: none;
-          padding: 0;
+          align-self: flex-end;
+          margin-top: 0.4rem;
+          padding: 0.4rem 0.85rem;
+          border-radius: var(--radius-pill);
+          background-color: #F0F7F3;
+          border: 1px solid #D0E4D9;
           font-family: var(--font-heading);
           font-weight: 700;
-          font-size: 0.85rem;
-          color: var(--color-text-primary);
-          transition: gap 0.2s ease, color 0.2s ease;
+          font-size: 0.82rem;
+          color: var(--color-dark-green);
+          transition: all 0.25s ease;
+          cursor: pointer;
         }
 
         .btn-learn-more:hover {
-          color: var(--color-dark-green);
-          gap: 0.5rem;
+          background-color: var(--color-dark-green);
+          color: #ffffff;
+          border-color: var(--color-dark-green);
+          gap: 0.55rem;
         }
 
         @media (max-width: 1100px) {
