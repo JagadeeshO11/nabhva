@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Smartphone, Mail, Phone, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
+import { ArrowRight, Smartphone, Mail, Phone, Share2, Heart, Globe, PlayCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function ContactFooter({ onOpenContact, onOpenAppDownload }) {
@@ -70,7 +70,7 @@ export default function ContactFooter({ onOpenContact, onOpenAppDownload }) {
           </div>
 
           <div className="footer-socials">
-            {[Twitter, Instagram, Linkedin, Youtube].map((Icon, i) => (
+            {[Share2, Heart, Globe, PlayCircle].map((Icon, i) => (
               <a key={i} href="#" className="social-btn" aria-label="Social">
                 <Icon size={17} />
               </a>
