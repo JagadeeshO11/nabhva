@@ -30,7 +30,7 @@ export default function Navbar({ activePage, setActivePage, onOpenContact, onOpe
           className="brand-logo"
           onClick={(e) => { e.preventDefault(); setActivePage('home'); }}
         >
-          <img src="/assets/logo.jpeg" alt="Nabhva logo" className="brand-logo-img" />
+          <img src="/assets/logo.png" alt="Nabhva logo" className="brand-logo-img" />
           <span className="sr-only">Nabhva</span>
         </a>
 
@@ -82,8 +82,6 @@ export default function Navbar({ activePage, setActivePage, onOpenContact, onOpe
               {item.label}
             </button>
           ))}
-
-
         </div>
       )}
 
@@ -94,18 +92,15 @@ export default function Navbar({ activePage, setActivePage, onOpenContact, onOpe
           z-index: 50;
           padding: 1.5rem 0;
           width: 100%;
-          background-color: rgba(255, 248, 225, 0.92);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          border-bottom: 2px solid var(--color-yellow);
-          transition: box-shadow 0.3s ease, background-color 0.3s ease;
+          background-color: var(--color-yellow);
+          border-bottom: none;
+          transition: box-shadow 0.3s ease;
           will-change: transform;
           transform: translateZ(0);
         }
 
         .navbar-header.scrolled {
-          box-shadow: 0 4px 20px rgba(255, 196, 0, 0.15);
-          background-color: rgba(255, 248, 225, 0.97);
+          box-shadow: 0 4px 20px rgba(255, 196, 0, 0.35);
         }
 
         .nav-container {
@@ -120,14 +115,14 @@ export default function Navbar({ activePage, setActivePage, onOpenContact, onOpe
         }
 
         .brand-logo-img {
-          width: 48px;
+          width: 64px;
           max-width: 100%;
           height: auto;
-          border-radius: 18px;
+          border-radius: 0;
           object-fit: contain;
-          background: #ffffff;
-          padding: 0.15rem;
-          box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+          background: transparent;
+          padding: 0;
+          box-shadow: none;
         }
 
         .sr-only {
@@ -227,13 +222,12 @@ export default function Navbar({ activePage, setActivePage, onOpenContact, onOpe
           top: 100%;
           left: 0;
           right: 0;
-          background-color: #ffffff;
+          background-color: var(--color-yellow);
           padding: 1.5rem;
           display: flex;
           flex-direction: column;
           gap: 1rem;
           box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-          border-bottom: 2px solid var(--color-yellow);
         }
 
         .mob-link {
@@ -252,6 +246,9 @@ export default function Navbar({ activePage, setActivePage, onOpenContact, onOpe
 
         @media (max-width: 992px) {
           .desktop-nav {
+            display: none;
+          }
+          .btn-app-nav, .btn-talk {
             display: none;
           }
           .mobile-toggle {

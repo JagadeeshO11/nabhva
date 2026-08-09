@@ -75,6 +75,12 @@ export default function Hero({ onOpenContact, onOpenAppDownload }) {
               <Smartphone size={16} />
               <span>Get Nabhva App</span>
             </button>
+
+            {/* Mobile-only CTA buttons (hidden in mobile header) */}
+            <button onClick={onOpenContact} className="btn-talk-badge mobile-cta">
+              <span className="yellow-dot"></span>
+              <span>Let's Talk</span>
+            </button>
           </div>
         </motion.div>
 
@@ -118,7 +124,7 @@ export default function Hero({ onOpenContact, onOpenAppDownload }) {
           top: -120px;
           right: 0;
           width: 52%;
-          height: 110%;
+          height: 130%;
           background: linear-gradient(135deg, #FFC400 0%, #FFB400 100%);
           border-bottom-left-radius: 260px;
           z-index: 1;
@@ -227,6 +233,39 @@ export default function Hero({ onOpenContact, onOpenAppDownload }) {
         .btn-app-badge:hover {
           background: var(--color-dark-green);
           transform: translateY(-2px);
+        }
+
+        .btn-talk-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: #ffffff;
+          color: var(--color-dark-green);
+          font-family: var(--font-heading);
+          font-weight: 800;
+          font-size: 0.9rem;
+          padding: 0.85rem 1.4rem;
+          border-radius: var(--radius-pill);
+          border: 1.5px solid var(--color-dark-green);
+          box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+          transition: all 0.25s ease;
+        }
+
+        .btn-talk-badge:hover {
+          background: var(--color-dark-green);
+          color: #ffffff;
+          transform: translateY(-2px);
+        }
+
+        .btn-talk-badge .yellow-dot {
+          width: 8px;
+          height: 8px;
+          background-color: var(--color-yellow);
+          border-radius: 50%;
+        }
+
+        .mobile-cta {
+          display: none;
         }
 
         .play-icon-bg {
@@ -361,11 +400,16 @@ export default function Hero({ onOpenContact, onOpenAppDownload }) {
 
           .hero-cta-group .btn-primary-dark,
           .hero-cta-group .btn-secondary-outline,
-          .hero-cta-group .btn-app-badge {
+          .hero-cta-group .btn-app-badge,
+          .hero-cta-group .btn-talk-badge {
             width: 100%;
             justify-content: center;
             font-size: 0.82rem;
             padding: 0.7rem 1rem;
+          }
+
+          .mobile-cta {
+            display: inline-flex;
           }
 
           .phone-wrapper {
