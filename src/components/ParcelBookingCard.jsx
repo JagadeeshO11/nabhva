@@ -199,6 +199,23 @@ export default function ParcelBookingCard() {
           background: var(--color-dark-green-hover);
           transform: translateY(-2px);
         }
+
+        @media (max-width: 480px) {
+          .parcel-card-box {
+            padding: 1.25rem;
+          }
+          .spec-row {
+            grid-template-columns: 1fr;
+          }
+          .parcel-meta {
+            flex-direction: column;
+            gap: 0.4rem;
+          }
+          .btn-book-parcel {
+            font-size: 0.9rem;
+            padding: 0.85rem;
+          }
+        }
       `}</style>
     </div>
   );

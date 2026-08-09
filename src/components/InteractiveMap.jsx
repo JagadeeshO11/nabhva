@@ -233,6 +233,24 @@ export default function InteractiveMap({ pickupText = "Koramangala 4th Block", d
           border-radius: var(--radius-pill);
           letter-spacing: 0.05em;
         }
+
+        @media (max-width: 480px) {
+          .map-wrapper {
+            min-height: 300px;
+          }
+          .map-tooltip {
+            font-size: 0.62rem;
+            padding: 0.25rem 0.55rem;
+          }
+          .map-controls {
+            bottom: 0.75rem;
+            right: 0.75rem;
+          }
+          .live-badge {
+            font-size: 0.6rem;
+            padding: 0.25rem 0.5rem;
+          }
+        }
       `}</style>
     </div>
   );

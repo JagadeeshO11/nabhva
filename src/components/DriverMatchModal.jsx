@@ -327,6 +327,26 @@ export default function DriverMatchModal() {
           padding: 0.85rem;
           border-radius: var(--radius-pill);
         }
+
+        @media (max-width: 480px) {
+          .driver-modal-card {
+            padding: 1.5rem;
+          }
+          .driver-info-box {
+            flex-wrap: wrap;
+          }
+          .plate-box {
+            margin-left: auto;
+          }
+          .driver-actions {
+            grid-template-columns: 1fr;
+          }
+          .otp-banner {
+            flex-direction: column;
+            gap: 0.5rem;
+            text-align: center;
+          }
+        }
       `}</style>
     </AnimatePresence>
   );

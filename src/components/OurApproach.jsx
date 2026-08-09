@@ -161,6 +161,35 @@ export default function OurApproach() {
             font-size: 2rem;
           }
         }
+
+        @media (max-width: 480px) {
+          .approach-section {
+            padding: 2rem 0 4rem 0;
+          }
+          .approach-title {
+            font-size: 1.75rem;
+          }
+          .step-card {
+            padding: 1.5rem;
+          }
+          .step-num {
+            font-size: 2.8rem;
+          }
+          .step-icon-circle {
+            width: 46px;
+            height: 46px;
+          }
+          .step-icon-circle svg {
+            width: 22px;
+            height: 22px;
+          }
+          .step-title {
+            font-size: 1.05rem;
+          }
+          .step-desc {
+            font-size: 0.85rem;
+          }
+        }
       `}</style>
     </section>
   );

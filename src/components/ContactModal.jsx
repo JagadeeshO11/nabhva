@@ -264,6 +264,28 @@ export default function ContactModal({ isOpen, onClose }) {
             grid-template-columns: 1fr;
           }
         }
+
+        @media (max-width: 480px) {
+          .modal-backdrop {
+            padding: 0.75rem;
+          }
+          .modal-card {
+            padding: 1.5rem 1rem;
+            max-height: 92vh;
+          }
+          .modal-header h2 {
+            font-size: 1.5rem;
+          }
+          .modal-header p {
+            font-size: 0.88rem;
+          }
+          .close-btn {
+            top: 0.85rem;
+            right: 0.85rem;
+            width: 32px;
+            height: 32px;
+          }
+        }
       `}</style>
     </AnimatePresence>
   );

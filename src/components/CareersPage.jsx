@@ -377,6 +377,47 @@ export default function CareersPage() {
             align-items: flex-start;
           }
         }
+
+        @media (max-width: 480px) {
+          .careers-page {
+            padding: 2rem 0 4rem 0;
+          }
+          .page-title {
+            font-size: 2rem;
+          }
+          .page-sub {
+            font-size: 1rem;
+          }
+          .perk-card {
+            padding: 1.5rem;
+          }
+          .perk-card h4 {
+            font-size: 1.05rem;
+          }
+          .section-head h2 {
+            font-size: 1.75rem;
+          }
+          .job-card {
+            padding: 1.25rem;
+          }
+          .job-title {
+            font-size: 1.1rem;
+          }
+          .job-tags {
+            flex-wrap: wrap;
+            gap: 0.5rem;
+          }
+          .btn-apply-job {
+            width: 100%;
+            justify-content: center;
+          }
+          .job-modal-card {
+            padding: 1.5rem;
+          }
+          .job-modal-title {
+            font-size: 1.4rem;
+          }
+        }
       `}</style>
     </section>
   );

@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
-import { Search, HelpCircle, MessageSquare, PhoneCall, ShieldCheck, Bike, Utensils, CreditCard, ChevronDown, ChevronUp, Bot, Send, CheckCircle2, Paperclip, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Search, Bike, Utensils, CreditCard, ShieldCheck, ChevronDown, ChevronUp, Send, CheckCircle2 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function SupportPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFaq, setActiveFaq] = useState(null);
   const [ticketSubmitted, setTicketSubmitted] = useState(false);
   const [ticketId, setTicketId] = useState('');
-  const [chatOpen, setChatOpen] = useState(false);
-  const [chatMessages, setChatMessages] = useState([
-    { sender: 'bot', text: '👋 Hi! I am Nabhva Assistant. How can I help you with your ride, food order, or account today?' }
-  ]);
-  const [userMsg, setUserMsg] = useState('');
 
   const helpTopics = [
     {
@@ -63,27 +58,6 @@ export default function SupportPage() {
     setTicketId(id);
     setTicketSubmitted(true);
     setTimeout(() => setTicketSubmitted(false), 4000);
-  };
-
-  const handleQuickChatQuery = (text) => {
-    setChatOpen(true);
-    const newMsgs = [...chatMessages, { sender: 'user', text }];
-    setChatMessages(newMsgs);
-    setTimeout(() => {
-      let botReply = 'I have located your account details. ';
-      if (text.includes('Refund')) botReply += 'Your last refund of ₹280 was processed via PhonePe UPI at 02:45 PM.';
-      else if (text.includes('Ride')) botReply += 'Your last bike ride (KA 01 H 9482) has been logged. Our Safety Team is investigating your feedback.';
-      else botReply += 'Our agent Suresh is reviewing your order history and will respond in ~2 mins.';
-      
-      setChatMessages((prev) => [...prev, { sender: 'bot', text: botReply }]);
-    }, 1000);
-  };
-
-  const handleSendMsg = (e) => {
-    e.preventDefault();
-    if (!userMsg.trim()) return;
-    handleQuickChatQuery(userMsg);
-    setUserMsg('');
   };
 
   return (
@@ -207,63 +181,6 @@ export default function SupportPage() {
           )}
         </div>
       </div>
-
-      {/* Floating AI Chat Assistant Widget Button */}
-      {!chatOpen && (
-        <button className="floating-chat-trigger" onClick={() => setChatOpen(true)}>
-          <Bot size={22} />
-          <span>Support AI Chat</span>
-        </button>
-      )}
-
-      {/* Floating Live Chat Box */}
-      <AnimatePresence>
-        {chatOpen && (
-          <motion.div 
-            className="ai-chat-box"
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 50, scale: 0.9 }}
-          >
-            <div className="chat-head">
-              <div className="chat-title">
-                <Bot size={20} />
-                <span>Nabhva Live Assistant</span>
-              </div>
-              <button className="btn-close-chat" onClick={() => setChatOpen(false)}>
-                <X size={18} />
-              </button>
-            </div>
-
-            <div className="chat-messages-area">
-              {chatMessages.map((m, idx) => (
-                <div key={idx} className={`msg-bubble ${m.sender}`}>
-                  <span>{m.text}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Quick Suggestion Pills */}
-            <div className="quick-suggestions">
-              <button onClick={() => handleQuickChatQuery("Check my refund status")}>Refund Status</button>
-              <button onClick={() => handleQuickChatQuery("Report bike ride issue")}>Ride Issue</button>
-              <button onClick={() => handleQuickChatQuery("Track current food order")}>Track Order</button>
-            </div>
-
-            <form onSubmit={handleSendMsg} className="chat-form-bar">
-              <input 
-                type="text" 
-                placeholder="Ask about rides, food, or refunds..."
-                value={userMsg}
-                onChange={(e) => setUserMsg(e.target.value)}
-              />
-              <button type="submit" className="btn-send-chat">
-                <Send size={16} />
-              </button>
-            </form>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       <style>{`
         .enhanced-support-page {
@@ -473,139 +390,6 @@ export default function SupportPage() {
 
         .green-check { color: #10B981; }
 
-        .floating-chat-trigger {
-          position: fixed;
-          bottom: 24px;
-          right: 24px;
-          background: var(--color-dark-green);
-          color: #ffffff;
-          font-family: var(--font-heading);
-          font-weight: 800;
-          font-size: 0.9rem;
-          padding: 0.85rem 1.4rem;
-          border-radius: var(--radius-pill);
-          box-shadow: 0 10px 30px rgba(20, 59, 41, 0.3);
-          display: flex;
-          align-items: center;
-          gap: 0.6rem;
-          z-index: 90;
-        }
-
-        .ai-chat-box {
-          position: fixed;
-          bottom: 24px;
-          right: 24px;
-          width: 400px;
-          height: 520px;
-          background: #ffffff;
-          border-radius: var(--radius-lg);
-          box-shadow: 0 25px 60px rgba(0,0,0,0.25);
-          z-index: 100;
-          display: flex;
-          flex-direction: column;
-          border: 1px solid #E2E8F0;
-          overflow: hidden;
-        }
-
-        .chat-head {
-          background: var(--color-dark-green);
-          color: #ffffff;
-          padding: 1rem 1.25rem;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        }
-
-        .chat-title {
-          display: flex;
-          align-items: center;
-          gap: 0.6rem;
-          font-family: var(--font-heading);
-          font-weight: 800;
-          font-size: 0.95rem;
-        }
-
-        .btn-close-chat {
-          background: none;
-          color: #ffffff;
-        }
-
-        .chat-messages-area {
-          padding: 1.25rem;
-          flex-grow: 1;
-          overflow-y: auto;
-          display: flex;
-          flex-direction: column;
-          gap: 0.85rem;
-          background: #FAFAFA;
-        }
-
-        .msg-bubble {
-          max-width: 82%;
-          padding: 0.75rem 1rem;
-          border-radius: var(--radius-md);
-          font-size: 0.88rem;
-          line-height: 1.5;
-        }
-
-        .msg-bubble.bot {
-          background: #ffffff;
-          border: 1px solid #E2E8F0;
-          align-self: flex-start;
-        }
-
-        .msg-bubble.user {
-          background: var(--color-dark-green);
-          color: #ffffff;
-          align-self: flex-end;
-        }
-
-        .quick-suggestions {
-          display: flex;
-          gap: 0.4rem;
-          padding: 0.5rem 0.75rem;
-          background: #ffffff;
-          border-top: 1px solid #F1F5F9;
-          overflow-x: auto;
-        }
-
-        .quick-suggestions button {
-          font-family: var(--font-heading);
-          font-weight: 700;
-          font-size: 0.72rem;
-          background: #F1F5F9;
-          color: var(--color-dark-green);
-          padding: 0.35rem 0.65rem;
-          border-radius: var(--radius-pill);
-          white-space: nowrap;
-        }
-
-        .chat-form-bar {
-          display: flex;
-          padding: 0.75rem;
-          background: #ffffff;
-          border-top: 1px solid #E2E8F0;
-          gap: 0.5rem;
-        }
-
-        .chat-form-bar input {
-          flex-grow: 1;
-          border: none;
-          outline: none;
-          font-size: 0.9rem;
-        }
-
-        .btn-send-chat {
-          background: var(--color-dark-green);
-          color: #ffffff;
-          width: 36px;
-          height: 36px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
         @media (max-width: 992px) {
           .topic-cards-grid {
             grid-template-columns: repeat(2, 1fr);
@@ -622,10 +406,46 @@ export default function SupportPage() {
           .form-group.full-width, .btn-submit-ticket {
             grid-column: span 1;
           }
-          .ai-chat-box {
-            width: calc(100vw - 32px);
-            right: 16px;
-            bottom: 16px;
+        }
+
+        @media (max-width: 480px) {
+          .enhanced-support-page {
+            padding: 2rem 0 4rem 0;
+          }
+          .support-title {
+            font-size: 2rem;
+          }
+          .support-sub {
+            font-size: 1rem;
+          }
+          .hero-search-wrapper {
+            padding: 0.7rem 1.1rem;
+          }
+          .hero-search-wrapper input {
+            font-size: 0.88rem;
+          }
+          .topic-card {
+            padding: 1.25rem;
+          }
+          .topic-card h4 {
+            font-size: 1rem;
+          }
+          .faq-card-section h2 {
+            font-size: 1.75rem;
+          }
+          .faq-head {
+            font-size: 0.92rem;
+            padding: 1rem;
+          }
+          .ticket-card {
+            padding: 1.5rem;
+          }
+          .ticket-head h2 {
+            font-size: 1.6rem;
+          }
+          .ticket-success-box {
+            flex-direction: column;
+            text-align: center;
           }
         }
       `}</style>

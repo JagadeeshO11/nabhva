@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, Smartphone } from 'lucide-react';
 
 export default function Navbar({ activePage, setActivePage, onOpenContact, onOpenAppDownload }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { id: 'home', label: 'Work & Services' },
@@ -13,7 +22,7 @@ export default function Navbar({ activePage, setActivePage, onOpenContact, onOpe
   ];
 
   return (
-    <header className="navbar-header">
+    <header className={`navbar-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         {/* Brand Logo */}
         <a 
@@ -73,30 +82,29 @@ export default function Navbar({ activePage, setActivePage, onOpenContact, onOpe
             </button>
           ))}
 
-          <button 
-            onClick={() => { setMobileMenuOpen(false); onOpenAppDownload(); }}
-            className="btn-app-nav full-width"
-          >
-            <Smartphone size={18} />
-            <span>Download Nabhva App</span>
-          </button>
 
-          <button 
-            onClick={() => { setMobileMenuOpen(false); onOpenContact(); }}
-            className="btn-talk full-width"
-          >
-            <span className="yellow-dot"></span>
-            <span>Let's Talk</span>
-          </button>
         </div>
       )}
 
       <style>{`
         .navbar-header {
-          position: relative;
+          position: sticky;
+          top: 0;
           z-index: 50;
           padding: 1.5rem 0;
           width: 100%;
+          background-color: rgba(255, 248, 225, 0.92);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border-bottom: 2px solid var(--color-yellow);
+          transition: box-shadow 0.3s ease, background-color 0.3s ease;
+          will-change: transform;
+          transform: translateZ(0);
+        }
+
+        .navbar-header.scrolled {
+          box-shadow: 0 4px 20px rgba(255, 196, 0, 0.15);
+          background-color: rgba(255, 248, 225, 0.97);
         }
 
         .nav-container {
@@ -144,18 +152,19 @@ export default function Navbar({ activePage, setActivePage, onOpenContact, onOpe
           display: inline-flex;
           align-items: center;
           gap: 0.45rem;
-          background: #121820;
-          color: #ffffff;
+          background: var(--color-yellow);
+          color: var(--color-dark-green);
           font-family: var(--font-heading);
           font-weight: 800;
           font-size: 0.82rem;
           padding: 0.6rem 1.15rem;
           border-radius: var(--radius-pill);
+          box-shadow: 0 4px 12px rgba(255, 196, 0, 0.3);
           transition: all 0.2s ease;
         }
 
         .btn-app-nav:hover {
-          background: var(--color-dark-green);
+          background: var(--color-yellow-hover);
           transform: translateY(-2px);
         }
 
@@ -220,17 +229,57 @@ export default function Navbar({ activePage, setActivePage, onOpenContact, onOpe
           color: var(--color-dark-green);
         }
 
-        .btn-talk.full-width, .btn-app-nav.full-width {
-          justify-content: center;
-          width: 100%;
-        }
-
         @media (max-width: 992px) {
           .desktop-nav {
             display: none;
           }
           .mobile-toggle {
             display: block;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .navbar-header {
+            padding: 1rem 0;
+          }
+          .brand-logo {
+            font-size: 1.6rem;
+          }
+          .btn-app-nav {
+            padding: 0.5rem 0.9rem;
+            font-size: 0.75rem;
+          }
+          .btn-talk {
+            padding: 0.55rem 1rem;
+            font-size: 0.8rem;
+          }
+          .mobile-toggle {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1.5px solid #E2E8F0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+          }
+          .nav-actions {
+            gap: 0.5rem;
+          }
+          .mobile-menu {
+            padding: 1.25rem;
+            gap: 0.85rem;
+          }
+          .mob-link {
+            font-size: 1rem;
+            padding: 0.5rem 0;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .nav-actions {
+            gap: 0.4rem;
           }
         }
       `}</style>

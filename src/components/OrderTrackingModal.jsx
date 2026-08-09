@@ -245,6 +245,21 @@ export default function OrderTrackingModal() {
               padding: 0.75rem;
               border-radius: var(--radius-sm);
             }
+
+            @media (max-width: 480px) {
+              .tracking-modal-card {
+                padding: 1.5rem;
+              }
+              .partner-card {
+                flex-wrap: wrap;
+              }
+              .btn-partner-call {
+                margin-left: auto;
+              }
+              .tracking-header h2 {
+                font-size: 1.3rem;
+              }
+            }
           `}</style>
         </motion.div>
       </div>

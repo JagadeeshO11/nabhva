@@ -274,6 +274,30 @@ export default function AppDownloadModal({ isOpen, onClose }) {
             grid-template-columns: 1fr;
           }
         }
+
+        @media (max-width: 480px) {
+          .app-modal-card {
+            padding: 1.5rem 1rem;
+          }
+          .app-modal-header h2 {
+            font-size: 1.5rem;
+          }
+          .app-modal-header p {
+            font-size: 0.88rem;
+          }
+          .store-card {
+            padding: 0.8rem 1rem;
+          }
+          .qr-sms-section {
+            padding: 1rem;
+          }
+          .sms-form {
+            flex-direction: column;
+          }
+          .btn-send-sms {
+            justify-content: center;
+          }
+        }
       `}</style>
     </AnimatePresence>
   );

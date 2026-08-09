@@ -350,6 +350,33 @@ export default function RideBookingCard() {
           background: var(--color-dark-green-hover);
           transform: translateY(-2px);
         }
+
+        @media (max-width: 480px) {
+          .ride-card-box {
+            padding: 1.25rem;
+          }
+          .vehicle-card {
+            padding: 0.7rem 0.85rem;
+          }
+          .veh-icon {
+            width: 34px;
+            height: 34px;
+          }
+          .veh-title {
+            font-size: 0.88rem;
+          }
+          .veh-price {
+            font-size: 1rem;
+          }
+          .ride-meta-bar {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          .btn-book-ride {
+            font-size: 0.9rem;
+            padding: 0.85rem;
+          }
+        }
       `}</style>
     </div>
   );

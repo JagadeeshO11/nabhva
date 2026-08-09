@@ -292,12 +292,37 @@ export default function ContactFooter({ onOpenContact, onOpenAppDownload }) {
         @media (max-width: 576px) {
           .cta-actions {
             flex-direction: column;
-            align-items: flex-start;
+            align-items: stretch;
+            width: 100%;
+          }
+
+          .cta-actions button {
+            width: 100%;
+            justify-content: center;
           }
 
           .footer-bottom {
             flex-direction: column;
             align-items: flex-start;
+            gap: 1rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .cta-card {
+            padding: 2rem 1.5rem;
+          }
+          .cta-title {
+            font-size: 1.6rem;
+          }
+          .cta-sub {
+            font-size: 0.9rem;
+          }
+          .contact-chips {
+            flex-direction: column;
+          }
+          .contact-chip {
+            font-size: 0.8rem;
           }
         }
       `}</style>

@@ -374,6 +374,33 @@ export default function FoodDeliverySection() {
             width: 100%;
           }
         }
+
+        @media (max-width: 480px) {
+          .food-section {
+            padding: 3rem 0 4rem 0;
+          }
+          .section-title {
+            font-size: 1.9rem;
+          }
+          .food-header {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          .food-img-box {
+            height: 160px;
+          }
+          .food-name {
+            font-size: 1rem;
+          }
+          .card-bottom {
+            flex-wrap: wrap;
+            gap: 0.5rem;
+          }
+          .btn-add-cart {
+            padding: 0.45rem 0.9rem;
+            font-size: 0.78rem;
+          }
+        }
       `}</style>
     </section>
   );

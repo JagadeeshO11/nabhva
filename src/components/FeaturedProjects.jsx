@@ -329,6 +329,32 @@ export default function FeaturedProjects({ onSelectProject }) {
             gap: 1rem;
           }
         }
+
+        @media (max-width: 480px) {
+          .services-showcase-section {
+            padding: 2rem 0 4rem 0;
+          }
+          .section-title {
+            font-size: 1.9rem;
+          }
+          .svc-image-box {
+            height: 200px;
+          }
+          .svc-icon-circle {
+            width: 44px;
+            height: 44px;
+          }
+          .svc-icon-circle svg {
+            width: 24px;
+            height: 24px;
+          }
+          .svc-title {
+            font-size: 1.05rem;
+          }
+          .svc-desc {
+            font-size: 0.85rem;
+          }
+        }
       `}</style>
     </section>
   );

@@ -208,6 +208,38 @@ export default function SafetyPage({ onOpenContact }) {
             flex-direction: column;
           }
         }
+
+        @media (max-width: 480px) {
+          .safety-page {
+            padding: 2rem 0 4rem 0;
+          }
+          .page-title {
+            font-size: 2rem;
+          }
+          .page-sub {
+            font-size: 1rem;
+          }
+          .safety-card {
+            padding: 1.5rem;
+          }
+          .safety-card-title {
+            font-size: 1.05rem;
+          }
+          .sos-banner {
+            padding: 1.75rem 1.25rem;
+          }
+          .sos-left h3 {
+            font-size: 1.25rem;
+          }
+          .sos-left p {
+            font-size: 0.85rem;
+          }
+          .btn-sos {
+            font-size: 0.82rem;
+            padding: 0.75rem 1.25rem;
+            white-space: normal;
+          }
+        }
       `}</style>
     </section>
   );

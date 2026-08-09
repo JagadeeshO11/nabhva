@@ -396,6 +396,40 @@ export default function CartDrawer() {
             }
 
             .empty-icon { color: #CBD5E1; }
+
+            @media (max-width: 480px) {
+              .cart-drawer {
+                width: 100%;
+              }
+              .drawer-header {
+                padding: 1rem;
+              }
+              .cart-content {
+                padding: 1rem;
+              }
+              .cart-item {
+                flex-wrap: wrap;
+                gap: 0.6rem;
+              }
+              .cart-item-details {
+                min-width: 0;
+              }
+              .qty-controls {
+                margin-left: auto;
+              }
+              .btn-remove {
+                position: absolute;
+                right: 0.5rem;
+                top: 0.5rem;
+              }
+              .cart-item {
+                position: relative;
+                padding-right: 2.5rem;
+              }
+              .pay-options {
+                grid-template-columns: 1fr;
+              }
+            }
           `}</style>
         </motion.div>
       </div>

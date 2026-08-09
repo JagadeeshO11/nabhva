@@ -325,6 +325,68 @@ export default function Hero({ onOpenContact, onOpenAppDownload }) {
             max-width: 300px;
           }
         }
+
+        @media (max-width: 768px) {
+          .hero-section {
+            min-height: auto;
+            padding: 1.5rem 0 4rem 0;
+          }
+
+          .hero-title {
+            font-size: 2.25rem;
+          }
+
+          .hero-subtitle {
+            font-size: 1rem;
+          }
+
+          .svc-pill {
+            font-size: 0.78rem;
+            padding: 0.45rem 0.85rem;
+            width: 100%;
+            justify-content: center;
+          }
+
+          .hero-cta-group {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0.75rem;
+          }
+
+          .hero-cta-group .btn-primary-dark,
+          .hero-cta-group .btn-secondary-outline,
+          .hero-cta-group .btn-app-badge {
+            width: 100%;
+            justify-content: center;
+          }
+
+          .phone-wrapper {
+            max-width: 240px;
+          }
+
+          .scroll-down-wrapper {
+            margin-top: 1.5rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .hero-title {
+            font-size: 1.9rem;
+          }
+
+          .hero-subtitle {
+            font-size: 0.92rem;
+          }
+
+          .yellow-shape-container {
+            height: 40%;
+            border-top-left-radius: 80px;
+          }
+
+          .phone-wrapper {
+            max-width: 200px;
+          }
+        }
       `}</style>
     </section>
   );

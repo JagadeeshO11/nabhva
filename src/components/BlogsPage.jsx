@@ -274,8 +274,8 @@ export default function BlogsPage() {
               </div>
 
               <div className="article-body-text">
-                {selectedArticle.content.split('\n\n').map((paragraph, i) => (
-                  <p key={i}>{paragraph}</p>
+                {selectedArticle.content.split('\n\n').filter(p => p.trim()).map((paragraph, i) => (
+                  <p key={i}>{paragraph.trim()}</p>
                 ))}
               </div>
             </motion.div>
@@ -531,6 +531,55 @@ export default function BlogsPage() {
         @media (max-width: 650px) {
           .blogs-grid {
             grid-template-columns: 1fr;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .blogs-page {
+            padding: 2rem 0 4rem 0;
+          }
+          .page-title {
+            font-size: 2rem;
+          }
+          .page-sub {
+            font-size: 1rem;
+          }
+          .blog-search-bar {
+            padding: 0.65rem 1rem;
+          }
+          .blog-search-bar input {
+            font-size: 0.85rem;
+          }
+          .cat-filters-scroll {
+            gap: 0.5rem;
+          }
+          .cat-chip {
+            font-size: 0.75rem;
+            padding: 0.4rem 0.85rem;
+          }
+          .blog-content {
+            padding: 1.25rem;
+          }
+          .blog-title {
+            font-size: 1.05rem;
+          }
+          .blog-footer {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.75rem;
+          }
+          .article-modal-card {
+            padding: 1.5rem;
+          }
+          .article-modal-title {
+            font-size: 1.5rem;
+          }
+          .article-meta-bar {
+            flex-wrap: wrap;
+            gap: 0.75rem;
+          }
+          .article-hero-box {
+            height: 180px;
           }
         }
       `}</style>

@@ -206,6 +206,24 @@ export default function CaseStudyModal({ project, onClose, onOpenContact }) {
             height: 220px;
           }
         }
+
+        @media (max-width: 480px) {
+          .case-body {
+            padding: 1.25rem;
+          }
+          .case-title {
+            font-size: 1.6rem;
+          }
+          .case-subtitle {
+            font-size: 0.95rem;
+          }
+          .case-hero-box {
+            height: 180px;
+          }
+          .meta-grid {
+            padding: 1rem;
+          }
+        }
       `}</style>
     </AnimatePresence>
   );
