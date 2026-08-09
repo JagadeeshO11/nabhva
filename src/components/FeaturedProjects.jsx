@@ -312,48 +312,28 @@ export default function FeaturedProjects({ onSelectProject }) {
         }
 
         @media (max-width: 1100px) {
-          .services-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem 1.5rem;
-          }
+          .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.75rem 1.25rem; }
         }
 
         @media (max-width: 650px) {
-          .services-grid {
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
-          }
-          .section-header {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 1rem;
-          }
+          .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem 0.85rem; }
+          .section-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+          .svc-image-box { height: 180px; }
         }
 
         @media (max-width: 480px) {
-          .services-showcase-section {
-            padding: 2rem 0 4rem 0;
-          }
-          .section-title {
-            font-size: 1.9rem;
-          }
-          .svc-image-box {
-            height: 200px;
-          }
-          .svc-icon-circle {
-            width: 44px;
-            height: 44px;
-          }
-          .svc-icon-circle svg {
-            width: 24px;
-            height: 24px;
-          }
-          .svc-title {
-            font-size: 1.05rem;
-          }
-          .svc-desc {
-            font-size: 0.85rem;
-          }
+          .services-showcase-section { padding: 1.5rem 0 3rem 0; }
+          .section-title { font-size: 1.6rem; }
+          .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem 0.65rem; }
+          .svc-image-box { height: 140px; }
+          .svc-icon-circle { width: 36px; height: 36px; top: 10px; left: 10px; }
+          .svc-icon-circle svg { width: 18px; height: 18px; }
+          .svc-info { padding: 0.75rem 0.1rem 0 0.1rem; gap: 0.2rem; }
+          .svc-title { font-size: 0.88rem; }
+          .svc-desc { font-size: 0.75rem; }
+          .svc-perks-row { gap: 0.25rem; }
+          .perk-chip { font-size: 0.62rem; padding: 0.1rem 0.4rem; }
+          .btn-learn-more { font-size: 0.72rem; padding: 0.3rem 0.6rem; }
         }
       `}</style>
     </section>

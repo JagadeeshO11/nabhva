@@ -197,48 +197,24 @@ export default function SafetyPage({ onOpenContact }) {
         }
 
         @media (max-width: 992px) {
-          .safety-pillars-grid {
-            grid-template-columns: 1fr;
-          }
-          .sos-banner {
-            flex-direction: column;
-            text-align: center;
-          }
-          .sos-left {
-            flex-direction: column;
-          }
+          .safety-pillars-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+          .sos-banner { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+          .sos-left { flex-direction: column; }
         }
 
         @media (max-width: 480px) {
-          .safety-page {
-            padding: 2rem 0 4rem 0;
-          }
-          .page-title {
-            font-size: 2rem;
-          }
-          .page-sub {
-            font-size: 1rem;
-          }
-          .safety-card {
-            padding: 1.5rem;
-          }
-          .safety-card-title {
-            font-size: 1.05rem;
-          }
-          .sos-banner {
-            padding: 1.75rem 1.25rem;
-          }
-          .sos-left h3 {
-            font-size: 1.25rem;
-          }
-          .sos-left p {
-            font-size: 0.85rem;
-          }
-          .btn-sos {
-            font-size: 0.82rem;
-            padding: 0.75rem 1.25rem;
-            white-space: normal;
-          }
+          .safety-page { padding: 1.75rem 0 3rem 0; }
+          .page-title { font-size: 1.6rem; }
+          .page-sub { font-size: 0.88rem; }
+          .safety-pillars-grid { grid-template-columns: 1fr; gap: 0.85rem; margin-bottom: 2.5rem; }
+          .safety-card { padding: 1.25rem; }
+          .safety-icon-box { width: 44px; height: 44px; margin-bottom: 0.85rem; }
+          .safety-card-title { font-size: 0.95rem; }
+          .safety-card-desc { font-size: 0.82rem; }
+          .sos-banner { padding: 1.25rem 1rem; gap: 1rem; }
+          .sos-left h3 { font-size: 1.1rem; }
+          .sos-left p { font-size: 0.82rem; }
+          .btn-sos { font-size: 0.78rem; padding: 0.65rem 1rem; white-space: normal; text-align: center; }
         }
       `}</style>
     </section>

@@ -10,12 +10,16 @@ import BlogsPage from './components/BlogsPage';
 import SafetyPage from './components/SafetyPage';
 import CareersPage from './components/CareersPage';
 import SupportPage from './components/SupportPage';
+import VolunteerPage from './components/VolunteerPage';
+import GalleryPage from './components/GalleryPage';
+import DonorPage from './components/DonorPage';
+import AdminPanel from './components/AdminPanel';
 import ContactModal from './components/ContactModal';
 import CaseStudyModal from './components/CaseStudyModal';
 import AppDownloadModal from './components/AppDownloadModal';
 
 export default function App() {
-  const [activePage, setActivePage] = useState('home'); // 'home' | 'blogs' | 'safety' | 'careers' | 'support'
+  const [activePage, setActivePage] = useState('home'); // 'home' | 'blogs' | 'safety' | 'careers' | 'support' | 'volunteer' | 'gallery' | 'donor' | 'admin'
   const [contactModalOpen, setContactModalOpen] = useState(false);
   const [appDownloadModalOpen, setAppDownloadModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
@@ -115,6 +119,22 @@ export default function App() {
 
         {activePage === 'support' && (
           <SupportPage />
+        )}
+
+        {activePage === 'volunteer' && (
+          <VolunteerPage />
+        )}
+
+        {activePage === 'gallery' && (
+          <GalleryPage />
+        )}
+
+        {activePage === 'donor' && (
+          <DonorPage />
+        )}
+
+        {activePage === 'admin' && (
+          <AdminPanel />
         )}
       </main>
 

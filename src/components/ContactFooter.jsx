@@ -276,17 +276,12 @@ export default function ContactFooter({ onOpenContact, onOpenAppDownload }) {
         @media (max-width: 900px) {
           .cta-card {
             grid-template-columns: 1fr;
-            padding: 3rem 2.25rem;
-            gap: 2rem;
+            padding: 2rem 1.75rem;
+            gap: 1.5rem;
           }
-
-          .cta-right {
-            display: none;
-          }
-
-          .cta-title {
-            font-size: 2rem;
-          }
+          .cta-right { display: none; }
+          .cta-title { font-size: 1.75rem; }
+          .cta-sub { font-size: 0.88rem; margin-bottom: 1.25rem; }
         }
 
         @media (max-width: 576px) {
@@ -294,36 +289,23 @@ export default function ContactFooter({ onOpenContact, onOpenAppDownload }) {
             flex-direction: column;
             align-items: stretch;
             width: 100%;
+            gap: 0.65rem;
           }
-
-          .cta-actions button {
-            width: 100%;
-            justify-content: center;
-          }
-
+          .cta-actions button { width: 100%; justify-content: center; }
           .footer-bottom {
             flex-direction: column;
             align-items: flex-start;
-            gap: 1rem;
+            gap: 0.75rem;
           }
         }
 
         @media (max-width: 480px) {
-          .cta-card {
-            padding: 2rem 1.5rem;
-          }
-          .cta-title {
-            font-size: 1.6rem;
-          }
-          .cta-sub {
-            font-size: 0.9rem;
-          }
-          .contact-chips {
-            flex-direction: column;
-          }
-          .contact-chip {
-            font-size: 0.8rem;
-          }
+          .cta-card { padding: 1.5rem 1.25rem; }
+          .cta-title { font-size: 1.4rem; }
+          .cta-sub { font-size: 0.82rem; }
+          .btn-primary-light, .btn-outline-light { font-size: 0.82rem; padding: 0.7rem 1.25rem; }
+          .contact-chips { flex-direction: column; gap: 0.5rem; }
+          .contact-chip { font-size: 0.75rem; }
         }
       `}</style>
     </footer>

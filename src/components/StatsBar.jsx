@@ -110,16 +110,25 @@ export default function StatsBar() {
         @media (max-width: 992px) {
           .stats-card {
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem 1rem;
-            padding: 2rem 1.5rem;
+            gap: 1.25rem 1rem;
+            padding: 1.5rem 1.25rem;
           }
+          .stat-icon-wrapper { width: 42px; height: 42px; }
+          .stat-number { font-size: 1.75rem; }
+          .stat-label { font-size: 0.78rem; }
         }
 
         @media (max-width: 576px) {
+          .stats-section { margin-top: -1rem; margin-bottom: 3rem; }
           .stats-card {
-            grid-template-columns: 1fr;
-            gap: 1.75rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem 0.75rem;
+            padding: 1.25rem 1rem;
           }
+          .stat-item { gap: 0.5rem; }
+          .stat-icon-wrapper { width: 36px; height: 36px; }
+          .stat-number { font-size: 1.5rem; }
+          .stat-label { font-size: 0.72rem; }
         }
       `}</style>
     </section>

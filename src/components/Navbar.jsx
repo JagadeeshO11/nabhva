@@ -18,7 +18,11 @@ export default function Navbar({ activePage, setActivePage, onOpenContact, onOpe
     { id: 'blogs', label: 'Blogs' },
     { id: 'safety', label: 'Safety' },
     { id: 'careers', label: 'Careers' },
-    { id: 'support', label: 'Support' }
+    { id: 'support', label: 'Support' },
+    { id: 'volunteer', label: 'Volunteer' },
+    { id: 'gallery', label: 'Gallery' },
+    { id: 'donor', label: 'Donate' },
+    { id: 'admin', label: 'Admin' },
   ];
 
   return (

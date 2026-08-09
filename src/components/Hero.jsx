@@ -293,8 +293,10 @@ export default function Hero({ onOpenContact, onOpenAppDownload }) {
           .hero-container {
             grid-template-columns: 1fr;
             text-align: center;
-            gap: 2.5rem;
+            gap: 1.5rem;
           }
+
+          .hero-right { order: -1; }
 
           .hero-left {
             max-width: 100%;
@@ -311,46 +313,50 @@ export default function Hero({ onOpenContact, onOpenAppDownload }) {
 
           .yellow-shape-container {
             width: 100%;
-            height: 50%;
-            top: auto;
-            bottom: 0;
-            border-top-left-radius: 120px;
+            height: 55%;
+            top: 0;
+            bottom: auto;
+            border-bottom-left-radius: 120px;
+            border-top-left-radius: 0;
           }
 
           .hero-title {
-            font-size: 2.75rem;
+            font-size: 2.4rem;
           }
 
           .phone-wrapper {
-            max-width: 300px;
+            max-width: 220px;
           }
         }
 
         @media (max-width: 768px) {
           .hero-section {
             min-height: auto;
-            padding: 1.5rem 0 4rem 0;
+            padding: 1.25rem 0 3rem 0;
           }
 
           .hero-title {
-            font-size: 2.25rem;
+            font-size: 1.9rem;
           }
 
           .hero-subtitle {
-            font-size: 1rem;
+            font-size: 0.88rem;
+            margin-bottom: 1rem;
+          }
+
+          .quick-service-pills {
+            margin-bottom: 1.25rem;
           }
 
           .svc-pill {
-            font-size: 0.78rem;
-            padding: 0.45rem 0.85rem;
-            width: 100%;
-            justify-content: center;
+            font-size: 0.72rem;
+            padding: 0.4rem 0.75rem;
           }
 
           .hero-cta-group {
             flex-direction: column;
             align-items: stretch;
-            gap: 0.75rem;
+            gap: 0.6rem;
           }
 
           .hero-cta-group .btn-primary-dark,
@@ -358,33 +364,40 @@ export default function Hero({ onOpenContact, onOpenAppDownload }) {
           .hero-cta-group .btn-app-badge {
             width: 100%;
             justify-content: center;
+            font-size: 0.82rem;
+            padding: 0.7rem 1rem;
           }
 
           .phone-wrapper {
-            max-width: 240px;
+            max-width: 180px;
           }
 
           .scroll-down-wrapper {
-            margin-top: 1.5rem;
+            margin-top: 1rem;
           }
         }
 
         @media (max-width: 480px) {
           .hero-title {
-            font-size: 1.9rem;
+            font-size: 1.6rem;
           }
 
           .hero-subtitle {
-            font-size: 0.92rem;
+            font-size: 0.82rem;
           }
 
           .yellow-shape-container {
-            height: 40%;
-            border-top-left-radius: 80px;
+            height: 35%;
+            border-top-left-radius: 60px;
           }
 
           .phone-wrapper {
-            max-width: 200px;
+            max-width: 155px;
+          }
+
+          .scroll-down-btn {
+            width: 38px;
+            height: 38px;
           }
         }
       `}</style>

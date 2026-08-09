@@ -523,64 +523,32 @@ export default function BlogsPage() {
         }
 
         @media (max-width: 992px) {
-          .blogs-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
+          .blogs-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
         }
 
         @media (max-width: 650px) {
-          .blogs-grid {
-            grid-template-columns: 1fr;
-          }
+          .blogs-grid { grid-template-columns: 1fr; gap: 1rem; }
         }
 
         @media (max-width: 480px) {
-          .blogs-page {
-            padding: 2rem 0 4rem 0;
-          }
-          .page-title {
-            font-size: 2rem;
-          }
-          .page-sub {
-            font-size: 1rem;
-          }
-          .blog-search-bar {
-            padding: 0.65rem 1rem;
-          }
-          .blog-search-bar input {
-            font-size: 0.85rem;
-          }
-          .cat-filters-scroll {
-            gap: 0.5rem;
-          }
-          .cat-chip {
-            font-size: 0.75rem;
-            padding: 0.4rem 0.85rem;
-          }
-          .blog-content {
-            padding: 1.25rem;
-          }
-          .blog-title {
-            font-size: 1.05rem;
-          }
-          .blog-footer {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.75rem;
-          }
-          .article-modal-card {
-            padding: 1.5rem;
-          }
-          .article-modal-title {
-            font-size: 1.5rem;
-          }
-          .article-meta-bar {
-            flex-wrap: wrap;
-            gap: 0.75rem;
-          }
-          .article-hero-box {
-            height: 180px;
-          }
+          .blogs-page { padding: 1.75rem 0 3rem 0; }
+          .page-title { font-size: 1.6rem; }
+          .page-sub { font-size: 0.88rem; margin-bottom: 1.25rem; }
+          .blog-search-bar { padding: 0.55rem 0.9rem; }
+          .blog-search-bar input { font-size: 0.82rem; }
+          .cat-filters-scroll { gap: 0.4rem; }
+          .cat-chip { font-size: 0.7rem; padding: 0.35rem 0.7rem; }
+          .blog-img-box { height: 160px; }
+          .blog-content { padding: 1rem; }
+          .blog-title { font-size: 0.95rem; }
+          .blog-excerpt { font-size: 0.8rem; }
+          .blog-footer { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+          .author-name { font-size: 0.72rem; }
+          .article-modal-card { padding: 1.25rem; }
+          .article-modal-title { font-size: 1.3rem; }
+          .article-meta-bar { flex-wrap: wrap; gap: 0.5rem; font-size: 0.75rem; }
+          .article-hero-box { height: 160px; }
+          .article-body-text { font-size: 0.88rem; }
         }
       `}</style>
     </section>
