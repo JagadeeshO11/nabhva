@@ -19,10 +19,6 @@ export default function Navbar({ activePage, setActivePage, onOpenContact, onOpe
     { id: 'safety', label: 'Safety' },
     { id: 'careers', label: 'Careers' },
     { id: 'support', label: 'Support' },
-    { id: 'volunteer', label: 'Volunteer' },
-    { id: 'gallery', label: 'Gallery' },
-    { id: 'donor', label: 'Donate' },
-    { id: 'admin', label: 'Admin' },
   ];
 
   return (
@@ -34,7 +30,8 @@ export default function Navbar({ activePage, setActivePage, onOpenContact, onOpe
           className="brand-logo"
           onClick={(e) => { e.preventDefault(); setActivePage('home'); }}
         >
-          <span className="logo-text">nabhva</span>
+          <img src="/assets/logo.jpeg" alt="Nabhva logo" className="brand-logo-img" />
+          <span className="sr-only">Nabhva</span>
         </a>
 
         {/* Desktop Navigation Links */}
@@ -118,11 +115,31 @@ export default function Navbar({ activePage, setActivePage, onOpenContact, onOpe
         }
 
         .brand-logo {
-          font-family: var(--font-heading);
-          font-weight: 800;
-          font-size: 2rem;
-          color: var(--color-dark-green);
-          letter-spacing: -0.04em;
+          display: flex;
+          align-items: center;
+        }
+
+        .brand-logo-img {
+          width: 48px;
+          max-width: 100%;
+          height: auto;
+          border-radius: 18px;
+          object-fit: contain;
+          background: #ffffff;
+          padding: 0.15rem;
+          box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
         }
 
         .desktop-nav {
