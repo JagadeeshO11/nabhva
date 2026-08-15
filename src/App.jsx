@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import StatsBar from './components/StatsBar';
 import FeaturedProjects from './components/FeaturedProjects';
+import FoodDeliverySection from './components/FoodDeliverySection';
 import OurApproach from './components/OurApproach';
 import ContactFooter from './components/ContactFooter';
 import BlogsPage from './components/BlogsPage';
@@ -19,7 +20,7 @@ import CaseStudyModal from './components/CaseStudyModal';
 import AppDownloadModal from './components/AppDownloadModal';
 
 export default function App() {
-  const [activePage, setActivePage] = useState('home'); // 'home' | 'blogs' | 'safety' | 'careers' | 'support' | 'volunteer' | 'gallery' | 'donor' | 'admin'
+  const [activePage, setActivePage] = useState('home');
   const [contactModalOpen, setContactModalOpen] = useState(false);
   const [appDownloadModalOpen, setAppDownloadModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
@@ -38,9 +39,8 @@ export default function App() {
 
   return (
     <div className="app-root">
-      {/* Scroll to Top Button */}
       {showScrollTop && (
-        <button 
+        <button
           className="scroll-top-btn"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           aria-label="Scroll to top"
@@ -83,82 +83,55 @@ export default function App() {
           }
         }
       `}</style>
-      {/* Top Navbar */}
-      <Navbar 
-        activePage={activePage} 
-        setActivePage={setActivePage} 
+
+      <Navbar
+        activePage={activePage}
+        setActivePage={setActivePage}
         onOpenContact={handleOpenContact}
         onOpenAppDownload={handleOpenAppDownload}
       />
 
-      {/* Main Dynamic Page Router */}
       <main>
         {activePage === 'home' && (
           <>
-            <Hero 
-              onOpenContact={handleOpenContact} 
+            <Hero
+              onOpenContact={handleOpenContact}
               onOpenAppDownload={handleOpenAppDownload}
             />
             <StatsBar />
             <FeaturedProjects onSelectProject={(project) => setSelectedProject(project)} />
+            <FoodDeliverySection />
             <OurApproach />
           </>
         )}
 
-        {activePage === 'blogs' && (
-          <BlogsPage />
-        )}
-
-        {activePage === 'safety' && (
-          <SafetyPage onOpenContact={handleOpenContact} />
-        )}
-
-        {activePage === 'careers' && (
-          <CareersPage />
-        )}
-
-        {activePage === 'support' && (
-          <SupportPage />
-        )}
-
-        {activePage === 'volunteer' && (
-          <VolunteerPage />
-        )}
-
-        {activePage === 'gallery' && (
-          <GalleryPage />
-        )}
-
-        {activePage === 'donor' && (
-          <DonorPage />
-        )}
-
-        {activePage === 'admin' && (
-          <AdminPanel />
-        )}
+        {activePage === 'blogs' && <BlogsPage />}
+        {activePage === 'safety' && <SafetyPage onOpenContact={handleOpenContact} />}
+        {activePage === 'careers' && <CareersPage />}
+        {activePage === 'support' && <SupportPage />}
+        {activePage === 'volunteer' && <VolunteerPage />}
+        {activePage === 'gallery' && <GalleryPage />}
+        {activePage === 'donor' && <DonorPage />}
+        {activePage === 'admin' && <AdminPanel />}
       </main>
 
-      {/* Footer for all pages */}
-      <ContactFooter 
-        onOpenContact={handleOpenContact} 
+      <ContactFooter
+        onOpenContact={handleOpenContact}
         onOpenAppDownload={handleOpenAppDownload}
       />
 
-      {/* App Download Redirect Modal */}
-      <AppDownloadModal 
+      <AppDownloadModal
         isOpen={appDownloadModalOpen}
         onClose={() => setAppDownloadModalOpen(false)}
       />
 
-      {/* Contact Form Modal */}
-      <ContactModal 
-        isOpen={contactModalOpen} 
-        onClose={() => setContactModalOpen(false)} 
+      <ContactModal
+        isOpen={contactModalOpen}
+        onClose={() => setContactModalOpen(false)}
       />
 
-      {/* Case Study Detail Modal */}
-      <CaseStudyModal 
-        project={selectedProject} 
+      <CaseStudyModal
+        project={selectedProject}
         onClose={() => setSelectedProject(null)}
         onOpenContact={handleOpenContact}
       />
