@@ -4,7 +4,13 @@ import './index.css'
 import App from './App.jsx'
 import { AppProvider } from './context/AppContext.jsx'
 
-createRoot(document.getElementById('root')).render(
+const rootElement = document.getElementById('root')
+
+if (!rootElement) {
+  throw new Error('Nabhva: root element was not found')
+}
+
+createRoot(rootElement).render(
   <StrictMode>
     <AppProvider>
       <App />
