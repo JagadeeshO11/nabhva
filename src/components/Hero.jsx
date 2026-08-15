@@ -2,7 +2,8 @@ import React from 'react';
 import { ArrowRight, ArrowDown, Play, Smartphone, Bike, Package, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-const HERO_IMAGE = 'https://res.cloudinary.com/znbhjevm/image/upload/v1786807602/1ec58383-7925-457a-b05c-3286c075f971.png';
+// Cloudinary asset named "ride" in the Nabhva folder.
+const HERO_IMAGE = 'https://res.cloudinary.com/znbhjevm/image/upload/v1786804984/55aa2d87-bf0d-41e5-9747-5d0028f9890e.png';
 
 export default function Hero({ onOpenContact, onOpenAppDownload }) {
   return (
@@ -26,7 +27,7 @@ export default function Hero({ onOpenContact, onOpenAppDownload }) {
           </div>
         </motion.div>
         <motion.div className="hero-right" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }}>
-          <div className="phone-wrapper float-animation" onClick={onOpenAppDownload}><img src={HERO_IMAGE} alt="Nabhva mobility app" className="phone-img" /></div>
+          <div className="phone-wrapper float-animation" onClick={onOpenAppDownload}><img src={HERO_IMAGE} alt="Nabhva rider mobility service" className="phone-img" /></div>
         </motion.div>
       </div>
       <div className="scroll-down-wrapper"><a href="#stats" className="scroll-down-btn" aria-label="Scroll down"><ArrowDown size={18} /></a></div>
