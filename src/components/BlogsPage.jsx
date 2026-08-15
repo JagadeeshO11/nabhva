@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Clock, ArrowRight, X, User, Calendar } from 'lucide-react';
+import { Search, Clock, ArrowRight, X, User, Calendar, Utensils } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const IMAGES = {
@@ -15,14 +15,15 @@ const blogs = [
   { id:'blog-3', category:'Auto & Cab', title:'Making Auto and Cab Travel More Predictable', excerpt:'Upfront fares, verified drivers and live tracking create a more dependable ride experience.', author:'Nabhva Mobility Team', date:'Aug 09, 2026', readTime:'5 min read', image:IMAGES.auto, content:'Nabhva Auto & Cab focuses on clarity before and during every trip. Riders can choose the vehicle type they need, understand the fare and follow the trip in real time.' },
   { id:'blog-4', category:'Safety & Trust', title:'Safety Features Every Nabhva Rider Should Know', excerpt:'The rider-focused safety principles behind verified captains, trip sharing and support.', author:'Nabhva Safety Team', date:'Aug 06, 2026', readTime:'5 min read', image:IMAGES.bike, content:'Safety is built into the ride journey. Nabhva focuses on verified captains, live location visibility, trip sharing and accessible rider support.' },
   { id:'blog-5', category:'Person-to-Person Parcel', title:'Sending a Parcel From One Person to Another', excerpt:'How Nabhva Parcel extends the rider network to simple person-to-person sending.', author:'Nabhva Mobility Team', date:'Aug 03, 2026', readTime:'4 min read', image:IMAGES.parcel, content:'Nabhva Parcel is a person-to-person service where a rider picks up a small parcel from the sender and takes it directly to the receiver, with tracking during the journey.' },
-  { id:'blog-6', category:'Mobility & Rides', title:'One Platform for the Way You Move', excerpt:'Why combining bike rides, autos, cabs and parcel sending creates a practical urban mobility platform.', author:'Nabhva Mobility Team', date:'Jul 30, 2026', readTime:'6 min read', image:IMAGES.auto, content:'Nabhva is built around movement. Riders can choose the right vehicle for the trip, while the same rider network can help move small personal parcels from one person to another.' }
+  { id:'blog-6', category:'Mobility & Rides', title:'One Platform for the Way You Move', excerpt:'Why combining bike rides, autos, cabs and parcel sending creates a practical urban mobility platform.', author:'Nabhva Mobility Team', date:'Jul 30, 2026', readTime:'6 min read', image:IMAGES.auto, content:'Nabhva is built around movement. Riders can choose the right vehicle for the trip, while the same rider network can help move small personal parcels from one person to another.' },
+  { id:'blog-7', category:'Food Delivery', title:'From Kitchen to Doorstep: A Better Food Delivery Experience', excerpt:'How Nabhva Food Delivery can connect local restaurants, quick ordering and reliable doorstep delivery in one experience.', author:'Nabhva Food Team', date:'Jul 27, 2026', readTime:'4 min read', image:'/assets/project-mealmate.png', content:'Nabhva Food Delivery brings meals and everyday groceries closer to customers through simple discovery, clear pricing, quick delivery windows and rider-based order tracking. The goal is a dependable food experience that works alongside Nabhva mobility.' }
 ];
 
 export default function BlogsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedArticle, setSelectedArticle] = useState(null);
-  const categories = ['All', 'Mobility & Rides', 'Daily Commute', 'Auto & Cab', 'Safety & Trust', 'Person-to-Person Parcel'];
+  const categories = ['All', 'Mobility & Rides', 'Daily Commute', 'Auto & Cab', 'Safety & Trust', 'Person-to-Person Parcel', 'Food Delivery'];
   const filteredBlogs = blogs.filter((b) => (selectedCategory === 'All' || b.category === selectedCategory) && `${b.title} ${b.excerpt}`.toLowerCase().includes(searchQuery.toLowerCase()));
 
   return (
@@ -31,8 +32,8 @@ export default function BlogsPage() {
         <div className="blogs-header">
           <div className="badge-yellow"><span>NABHVA JOURNAL & INSIGHTS</span></div>
           <h1 className="page-title">Mobility, Rides & <span className="highlight-yellow">Moving People Forward.</span></h1>
-          <p className="page-sub">Insights on bike rides, auto & cab travel, daily commuting, rider safety and person-to-person parcel sending.</p>
-          <div className="blog-search-bar"><Search size={18} className="search-icon" /><input type="text" placeholder="Search mobility, rides, safety, parcels..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} /></div>
+          <p className="page-sub">Insights on bike rides, auto & cab travel, daily commuting, rider safety, food delivery and person-to-person parcel sending.</p>
+          <div className="blog-search-bar"><Search size={18} className="search-icon" /><input type="text" placeholder="Search mobility, rides, food, safety, parcels..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} /></div>
           <div className="cat-filters-scroll">{categories.map((cat) => <button key={cat} className={`cat-chip ${selectedCategory === cat ? 'active' : ''}`} onClick={() => setSelectedCategory(cat)}>{cat}</button>)}</div>
         </div>
         <div className="blogs-grid">
