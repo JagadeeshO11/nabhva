@@ -2,12 +2,12 @@ import React from 'react';
 import { Bike, Car, Package, ArrowRight, MapPin, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-// All service imagery comes from the current Nabhva Cloudinary folder.
+// Images are mapped by the names you assigned to the Nabhva Cloudinary assets.
 const NABHVA_IMAGES = {
-  bike: 'https://res.cloudinary.com/znbhjevm/image/upload/v1786807316/45e69e33-9001-4562-a27a-d11f0b025a02.png',
-  daily: 'https://res.cloudinary.com/znbhjevm/image/upload/v1786807193/6e5cdc1a-e391-4499-b585-b4664e9ad8f1.png',
-  autoCab: 'https://res.cloudinary.com/znbhjevm/image/upload/v1786807002/43826343-8d42-4941-a72f-5a46efee3467.png',
-  parcel: 'https://res.cloudinary.com/znbhjevm/image/upload/v1786806930/bfb13dcc-718b-45bb-ae37-05b6ba92b41a.jpg'
+  bike: 'https://res.cloudinary.com/znbhjevm/image/upload/v1786804984/55aa2d87-bf0d-41e5-9747-5d0028f9890e.png', // ride
+  daily: 'https://res.cloudinary.com/znbhjevm/image/upload/v1786807193/6e5cdc1a-e391-4499-b585-b4664e9ad8f1.png', // ride2
+  autoCab: 'https://res.cloudinary.com/znbhjevm/image/upload/v1786807316/45e69e33-9001-4562-a27a-d11f0b025a02.png', // autocab
+  parcel: 'https://res.cloudinary.com/znbhjevm/image/upload/v1786807002/43826343-8d42-4941-a72f-5a46efee3467.png' // parcel
 };
 
 export default function FeaturedProjects({ onSelectProject }) {
