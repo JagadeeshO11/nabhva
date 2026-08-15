@@ -56,8 +56,8 @@ export default function SupportPage() {
         <div className="ticket-card">
           <div className="ticket-head"><h2>Submit a Support Ticket</h2><p>Can't find an answer? Submit a ticket and our team will get back within 2 hours.</p></div>
           {ticketSubmitted ? <div className="ticket-success-box"><CheckCircle2 size={44} className="green-check" /><div><h3>Ticket {ticketId} Created!</h3><p>A confirmation email and SMS update has been sent to your registered contact.</p></div></div> : <form onSubmit={handleTicketSubmit} className="ticket-form-grid">
-            <div className="form-group"><label>Your Name</label><input type="text" required placeholder="Arjun" /></div>
-            <div className="form-group"><label>Registered Phone / Email</label><input type="text" required placeholder="arjun@example.com" /></div>
+            <div className="form-group"><label>Your Name</label><input type="text" required placeholder="Priya" /></div>
+            <div className="form-group"><label>Registered Phone / Email</label><input type="text" required placeholder="priya@example.com" /></div>
             <div className="form-group"><label>Category</label><select required><option value="ride">Bike Ride & Captain Issue</option><option value="food">Food Delivery Order Issue</option><option value="parcel">Parcel Courier Tracking</option><option value="refund">Payment & UPI Refund</option></select></div>
             <div className="form-group"><label>Order / Ride ID (Optional)</label><input type="text" placeholder="e.g. NBH-99482" /></div>
             <div className="form-group full-width"><label>Describe the Issue</label><textarea rows={4} required placeholder="Provide trip details, captain name, or order items..." /></div>
