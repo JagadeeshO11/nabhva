@@ -18,12 +18,45 @@ import ContactModal from './components/ContactModal';
 import CaseStudyModal from './components/CaseStudyModal';
 import AppDownloadModal from './components/AppDownloadModal';
 
+const ROUTES = {
+  home: '/',
+  blogs: '/blogs',
+  safety: '/safety',
+  careers: '/careers',
+  support: '/support',
+  volunteer: '/volunteer',
+  gallery: '/gallery',
+  donor: '/donor',
+  admin: '/admin',
+};
+
+const getPageFromPath = () => {
+  const path = window.location.pathname.replace(/\/$/, '') || '/';
+  const entry = Object.entries(ROUTES).find(([, route]) => route === path);
+  return entry ? entry[0] : 'home';
+};
+
 export default function App() {
-  const [activePage, setActivePage] = useState('home');
+  const [activePage, setActivePage] = useState(getPageFromPath);
   const [contactModalOpen, setContactModalOpen] = useState(false);
   const [appDownloadModalOpen, setAppDownloadModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
+
+  const navigate = (page) => {
+    const route = ROUTES[page] || '/';
+    if (window.location.pathname !== route) {
+      window.history.pushState({ page }, '', route);
+    }
+    setActivePage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    const handlePopState = () => setActivePage(getPageFromPath());
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setShowScrollTop(window.scrollY > 400);
@@ -54,7 +87,7 @@ export default function App() {
 
       <Navbar
         activePage={activePage}
-        setActivePage={setActivePage}
+        setActivePage={navigate}
         onOpenContact={handleOpenContact}
         onOpenAppDownload={handleOpenAppDownload}
       />
