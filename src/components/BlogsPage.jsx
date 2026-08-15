@@ -6,7 +6,7 @@ const IMAGES = {
   bike: 'https://res.cloudinary.com/znbhjevm/image/upload/v1786807602/1ec58383-7925-457a-b05c-3286c075f971.png',
   commute: 'https://res.cloudinary.com/znbhjevm/image/upload/v1786807193/6e5cdc1a-e391-4499-b585-b4664e9ad8f1.png',
   auto: 'https://res.cloudinary.com/znbhjevm/image/upload/v1786807002/43826343-8d42-4941-a72f-5a46efee3467.png',
-  parcel: 'https://res.cloudinary.com/znbhjevm/image/upload/v1786806930/bfb13dcc-718b-45bb-ae37-05b6ba92b41a.jpg'
+  parcel: 'https://res.cloudinary.com/znbhjevm/image/upload/v1786808956/43df782a-9ee2-4a45-adf2-4788fc58a8db.png'
 };
 
 const blogs = [
@@ -14,7 +14,7 @@ const blogs = [
   { id:'blog-2', category:'Daily Commute', title:'A Smarter Way to Plan Your Daily Commute', excerpt:'One mobility experience for short rides, regular commutes and different vehicle options.', author:'Nabhva Mobility Team', date:'Aug 12, 2026', readTime:'5 min read', image:IMAGES.commute, content:'Daily travel should not require juggling multiple options. Nabhva brings bike rides, autos and cabs into one rider-focused experience with simple booking and live trip visibility.' },
   { id:'blog-3', category:'Auto & Cab', title:'Making Auto and Cab Travel More Predictable', excerpt:'Upfront fares, verified drivers and live tracking create a more dependable ride experience.', author:'Nabhva Mobility Team', date:'Aug 09, 2026', readTime:'5 min read', image:IMAGES.auto, content:'Nabhva Auto & Cab focuses on clarity before and during every trip. Riders can choose the vehicle type they need, understand the fare and follow the trip in real time.' },
   { id:'blog-4', category:'Safety & Trust', title:'Safety Features Every Nabhva Rider Should Know', excerpt:'The rider-focused safety principles behind verified captains, trip sharing and support.', author:'Nabhva Safety Team', date:'Aug 06, 2026', readTime:'5 min read', image:IMAGES.bike, content:'Safety is built into the ride journey. Nabhva focuses on verified captains, live location visibility, trip sharing and accessible rider support.' },
-  { id:'blog-5', category:'Person-to-Person Parcel', title:'Sending a Parcel From One Person to Another', excerpt:'How Nabhva Parcel extends the rider network to simple person-to-person sending.', author:'Nabhva Mobility Team', date:'Aug 03, 2026', readTime:'4 min read', image:IMAGES.parcel, content:'Nabhva Parcel is not food delivery. It is a person-to-person service where a rider picks up a small parcel from the sender and takes it directly to the receiver, with tracking during the journey.' },
+  { id:'blog-5', category:'Person-to-Person Parcel', title:'Sending a Parcel From One Person to Another', excerpt:'How Nabhva Parcel extends the rider network to simple person-to-person sending.', author:'Nabhva Mobility Team', date:'Aug 03, 2026', readTime:'4 min read', image:IMAGES.parcel, content:'Nabhva Parcel is a person-to-person service where a rider picks up a small parcel from the sender and takes it directly to the receiver, with tracking during the journey.' },
   { id:'blog-6', category:'Mobility & Rides', title:'One Platform for the Way You Move', excerpt:'Why combining bike rides, autos, cabs and parcel sending creates a practical urban mobility platform.', author:'Nabhva Mobility Team', date:'Jul 30, 2026', readTime:'6 min read', image:IMAGES.auto, content:'Nabhva is built around movement. Riders can choose the right vehicle for the trip, while the same rider network can help move small personal parcels from one person to another.' }
 ];
 
