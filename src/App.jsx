@@ -4,7 +4,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import StatsBar from './components/StatsBar';
 import FeaturedProjects from './components/FeaturedProjects';
-import FoodDeliverySection from './components/FoodDeliverySection';
 import OurApproach from './components/OurApproach';
 import ContactFooter from './components/ContactFooter';
 import BlogsPage from './components/BlogsPage';
@@ -27,9 +26,7 @@ export default function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 400);
-    };
+    const handleScroll = () => setShowScrollTop(window.scrollY > 400);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -50,38 +47,9 @@ export default function App() {
       )}
 
       <style>{`
-        .scroll-top-btn {
-          position: fixed;
-          bottom: 24px;
-          right: 24px;
-          width: 46px;
-          height: 46px;
-          border-radius: 50%;
-          background: var(--color-yellow);
-          color: var(--color-dark-green);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 6px 20px rgba(255, 196, 0, 0.4);
-          z-index: 95;
-          transition: all 0.25s ease;
-          cursor: pointer;
-        }
-
-        .scroll-top-btn:hover {
-          transform: translateY(-3px);
-          background: var(--color-yellow-hover);
-          box-shadow: 0 10px 28px rgba(255, 196, 0, 0.5);
-        }
-
-        @media (max-width: 480px) {
-          .scroll-top-btn {
-            bottom: 16px;
-            right: 16px;
-            width: 40px;
-            height: 40px;
-          }
-        }
+        .scroll-top-btn { position:fixed; bottom:24px; right:24px; width:46px; height:46px; border-radius:50%; background:var(--color-yellow); color:var(--color-dark-green); display:flex; align-items:center; justify-content:center; box-shadow:0 6px 20px rgba(255,196,0,.4); z-index:95; cursor:pointer; }
+        .scroll-top-btn:hover { transform:translateY(-3px); background:var(--color-yellow-hover); }
+        @media(max-width:480px){ .scroll-top-btn{bottom:16px;right:16px;width:40px;height:40px;} }
       `}</style>
 
       <Navbar
@@ -94,17 +62,12 @@ export default function App() {
       <main>
         {activePage === 'home' && (
           <>
-            <Hero
-              onOpenContact={handleOpenContact}
-              onOpenAppDownload={handleOpenAppDownload}
-            />
+            <Hero onOpenContact={handleOpenContact} onOpenAppDownload={handleOpenAppDownload} />
             <StatsBar />
             <FeaturedProjects onSelectProject={(project) => setSelectedProject(project)} />
-            <FoodDeliverySection />
             <OurApproach />
           </>
         )}
-
         {activePage === 'blogs' && <BlogsPage />}
         {activePage === 'safety' && <SafetyPage onOpenContact={handleOpenContact} />}
         {activePage === 'careers' && <CareersPage />}
@@ -115,26 +78,10 @@ export default function App() {
         {activePage === 'admin' && <AdminPanel />}
       </main>
 
-      <ContactFooter
-        onOpenContact={handleOpenContact}
-        onOpenAppDownload={handleOpenAppDownload}
-      />
-
-      <AppDownloadModal
-        isOpen={appDownloadModalOpen}
-        onClose={() => setAppDownloadModalOpen(false)}
-      />
-
-      <ContactModal
-        isOpen={contactModalOpen}
-        onClose={() => setContactModalOpen(false)}
-      />
-
-      <CaseStudyModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-        onOpenContact={handleOpenContact}
-      />
+      <ContactFooter onOpenContact={handleOpenContact} onOpenAppDownload={handleOpenAppDownload} />
+      <AppDownloadModal isOpen={appDownloadModalOpen} onClose={() => setAppDownloadModalOpen(false)} />
+      <ContactModal isOpen={contactModalOpen} onClose={() => setContactModalOpen(false)} />
+      <CaseStudyModal project={selectedProject} onClose={() => setSelectedProject(null)} onOpenContact={handleOpenContact} />
     </div>
   );
 }
