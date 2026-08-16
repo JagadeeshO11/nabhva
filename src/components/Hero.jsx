@@ -10,7 +10,7 @@ export default function Hero({ onOpenContact, onOpenAppDownload }) {
       <div className="yellow-shape-container"><svg className="dashed-curves" viewBox="0 0 500 500" fill="none"><path d="M50 100 Q 200 50 400 200 T 100 450" stroke="white" strokeWidth="3" strokeDasharray="8 8" opacity="0.75" /><path d="M150 20 Q 350 120 280 380" stroke="white" strokeWidth="2.5" strokeDasharray="6 6" opacity="0.6" /></svg></div>
       <div className="container hero-container">
         <motion.div className="hero-left" initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-          <div className="badge-yellow"><span>SMART MOBILITY & PERSON-TO-PERSON DELIVERY</span></div>
+          <div className="badge-yellow"><span>SMART RIDES • SEAMLESS DELIVERY</span></div>
           <h1 className="hero-title">EVERY MOVE. SAFER WITH NABHVA</h1>
           <p className="hero-subtitle">Nabhva is a rider-first mobility platform for everyday city travel, with a simple way to send small parcels directly from one person to another.</p>
           <div className="quick-service-pills">
